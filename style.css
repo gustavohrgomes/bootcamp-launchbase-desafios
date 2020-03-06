@@ -30,7 +30,9 @@ header {
 .links a {
     color: white;
     font-size: 18px;
-    padding: 30px;
+    line-height: 28px;
+    margin: 0 16px;
+    padding-bottom: 3px;
     text-decoration: none;
 }
 
@@ -80,7 +82,5 @@ header {
 }
 
 #links-footer a{
-    margin: 0 30px;
-    padding: 3px 0;
     border-bottom: 2px solid var(--color-green);
 }
