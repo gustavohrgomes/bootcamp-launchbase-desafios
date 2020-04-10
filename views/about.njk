@@ -1,28 +1,33 @@
 {% extends "layout.njk" %}
 
+{% block head %}
+
+   <title>Sobre a Rocketseat</title>
+
+{% endblock %}
+
 {% block content %}
 
    <div id="wrapper">
-      <img src="https://avatars0.githubusercontent.com/u/28929274?s=200&v=4" alt="Rocketseat">
+      <img src="{{about.avatar_url}}" alt="Rocketseat">
 
-      <h1>Rocketseat</h1>
-      <p>Plataforma de educação em tecnologia 🚀</p>
+      <h1>{{about.name}}</h1>
+      <p>{{about.description}}</p>
 
       <div id="technologies">
          <h3>Principais Tecnologias:</h3>
          <ul>
-            <li>Javascript</li>
-            <li>ReactJS</li>
-            <li>React-Native</li>
-            <li>NodeJS</li>
+            {% for tech in about.technologies %}
+               <li>{{tech.name}}</li>
+            {% endfor %}
          </ul>
       </div>
    </div>
 
    <div id="links-footer" class="links">
-      <a href="https://github.com/Rocketseat" target="_blank">Github</a>
-      <a href="https://www.instagram.com/rocketseat_oficial/" target="_blank">Instagram</a>
-      <a href="https://www.facebook.com/rocketseat/" target="_blank">Facebook</a>
+      {% for link in about.links %}
+         <a href="{{link.url}}" target="_blank">{{link.name}}</a>
+      {% endfor %}
    </div>
 
 {% endblock %}

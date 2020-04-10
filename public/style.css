@@ -100,6 +100,7 @@ header {
     text-align: center;
     border-radius: 10px;
     cursor: pointer;
+    display: grid;
 }
 
 .card__image-container {
@@ -114,7 +115,7 @@ header {
 .card__info {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: baseline;
+    align-items: center;
 }
 
 .card__price {

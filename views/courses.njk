@@ -1,7 +1,10 @@
 {% extends "layout.njk" %}
 
 {% block head %}
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title>Cursos Rocketseat</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
 {% endblock %}
 
 {% block content %}
@@ -10,44 +13,20 @@
    </div>
 
    <section class="cards">
-      <div class="card" id="starter">
-         <div class="card__image-container">
-            <img src="https://skylab.rocketseat.com.br/static/64c237ccff807c054339a62d53b4b402.svg" alt="Rocketseat - Starter Logo">
-         </div>
-         <div class="card__content">
-            <p>Torne-se um programador desejado no mercado com esses cursos gratuitos</p>
-         </div>
-         <div class="card__info">
-            <p>5 Módulos</p>
-            <p class="card__price">FREE</p>
-         </div>
-      </div>
-
-      <div class="card" id="launchbase">
-         <div class="card__image-container">
-            <img src="https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg" alt="Rocketseat - Launchbase Logo">
-         </div>
-         <div class="card__content">
-            <p>Domine a programação do zero e tenha as melhores oportunidades do mercado</p>
-         </div>
-         <div class="card__info">
-            <p>5 Módulos</p>
-            <p class="card__price">FREE</p>
-         </div>
-      </div>
-
-      <div class="card" id="gostack">
-         <div class="card__image-container">
-            <img src="https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg" alt="Rocketseat - GoStack Logo">
-         </div>
-         <div class="card__content">
-            <p>Treinamento imersivo nas tecnologias mais modernas de desenvolvimento web e mobile</p>
-         </div>
-         <div class="card__info">
-            <p>5 Módulos</p>
-            <p class="card__price">FREE</p>
-         </div>
-      </div>
+      {% for item in items %}
+        <div class="card" id="{{item.id}}">
+          <div class="card__image-container">
+              <img src="{{item.image_url}}" alt="Rocketseat - {{item.id}} logo">
+          </div>
+          <div class="card__content">
+              <p>{{item.content}}</p>
+          </div>
+          <div class="card__info">
+              <p>{{item.info}}</p>
+              <p class="card__price">{{item.price}}</p>
+          </div>
+        </div>
+      {% endfor %}
    </section>
 
    <div class="modal-overlay">
