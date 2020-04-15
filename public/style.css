@@ -180,3 +180,17 @@ iframe {
     height: 100%;
     margin-top: 0;
 }
+
+/* === Course Page === */
+.course {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.course .card {
+    cursor: default;
+}
+
+.course .card__image-container img {
+    height: 200px;
+}

@@ -64,8 +64,6 @@ A partir do arquivo do desafio 2-1, adicionar um novo link no header chamado Sob
 
 ### :rocket: Desafio 2-3: Página de cursos e iframe
 
-#### Sobre o desafio
-
 A partir do arquivo do desafio 2.2, adicionar no header um link chamado Conteúdos. Essa página deve conter um grid onde devem ser mostrados os 3 principais cursos da Rocketseat: Starter, Launchbase e GoStack. Ao clicar em um dos cursos, deve ser aberta uma modal onde um iframe irá carregar as informações do curso selecionado.
 
 #### Informações da página
@@ -91,8 +89,6 @@ O modal deve conter um iframe que busca a página do curso (dica: basta adiciona
 
 ### :rocket: Desafio 3-1: Primeiro servidor
 
-#### Sobre o desafio
-
 Nesse desafio você deve:
 - Criar um servidor que tenha duas rotas que devem retornar o conteúdo dos html gerados no desafio 2-3 (páginas de `Cursos` e `Sobre`). 
 - Implementar um arquivo padrão (layout.njk) que reaproveite o código em comum entre esses dois 
@@ -105,6 +101,32 @@ Para capturar as requisições que não existem (404), foi adicionado o código 
     response.status(404).render("not-found")
   })
 ````
+### :rocket: Desafio 3-2: Arquivos nunjucks e dados dinâmicos
+
+Nesse desafio você deve atualizar os arquivos com informações de cursos e descrição de forma dinâmica.
+
+### :rocket: Desafio 3-3: Página de descrição do curso
+
+Nesse desafio você deve criar uma página de descrição do curso que deve ser chamada no lugar da modal quando o usuário clicar no card do curso.
+
+#### Rota
+
+A rota também será a `/courses`, porém o id do curso será passado via route params (ex.:` /courses/id_do_curso`). Dica: utilize o req.params para recuperar o id fornecido na rota.
+
+```js
+  server.get("/courses/:id", function(req, res) {
+    const id = req.params.id;
+
+    return res.send(`O id fornecido na rota é: ${id}`);
+  });
+```
+
+#### Informações
+
+- Layout padrão
+- Card do curso
+- Link que redireciona para a página do curso
+
 ### :memo: Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](../LICENSE) para mais detalhes.
